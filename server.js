@@ -38,7 +38,6 @@ const corsOptions = {
 
 // 🔹 CORS MUST BE BEFORE ROUTES
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // handle preflight
 
 // 🔹 Stripe webhook needs raw body and must be BEFORE express.json
 app.post('/stripe', express.raw({ type: 'application/json' }), stripeWebhooks);
